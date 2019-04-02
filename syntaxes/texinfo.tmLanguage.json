@@ -1,0 +1,321 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "GNU Texinfo",
+	"patterns": [
+		{
+			"match": "^\\\\input\\stexinfo",
+			"name": "constant.language"
+		},
+		{
+			"match": "@c\\s.*$",
+			"name": "comment.line"
+		},
+		{
+			"match": "@(@|{|})",
+			"name": "constant.character.escape"
+		},
+		{ "include": "#parameter-commands" },
+		{ "include": "#modifier-commands" },
+		{ "include": "#special-block-commands" },
+		{ "include": "#block-commands" },
+		{
+			"match": "@\\w+|{|}",
+			"name": "invalid.illegal"
+		}
+	],
+	"repository": {
+		"parameter-commands": {
+			"patterns": [{
+				"match": "(@(strong|emph|code|copyright|ref|uref|xref|dfn|var|dots|TeX){)([^}]*)(})",
+				"captures": {
+					"1": { "name": "entity.name.function" },
+					"3": { "name": "string" },
+					"4": { "name": "entity.name.function" }
+				}
+			}]
+		},
+		"modifier-commands": {
+			"patterns": [{
+				"match": "(@(\\*|\\\\|setfilename|settitle|documentlanguage|title|author|vskip|insertcopying|node|top|include|chapter|appendix|unnumbered|section|heading|cindex|printindex|center|page|contents|shortcontents|bye)\\s+)(.*)",
+				"captures": {
+					"1": { "name": "entity.name.function" },
+					"3": { "name": "string" }
+				}
+			}]
+		},
+		"special-block-commands": {
+			"patterns": [
+				{
+					"begin": "^\\s*(@menu)$",
+					"end": "^\\s*(@(end)(\\s+)(menu))$",
+					"beginCaptures": {
+						"1": { "name": "entity.name.function" }
+					},
+					"endCaptures": {
+						"1": { "name": "entity.name.function" },
+						"2": { "name": "constant.language" },
+						"3": { "name": "entity.name.function" }
+					},
+					"patterns": [
+						{
+							"match": "^\\s*(\\*)(\\s+)(.*)(::)(.*)$",
+							"captures": {
+								"1": { "name": "keyword.operator" },
+								"3": { "name": "string" },
+								"4": { "name": "keyword.operator" },
+								"5": {}
+							}
+						},
+						{ "include": "$self" }
+					]
+				},
+				{
+					"begin": "^\\s*(@enumerate)(\\s+(\\d+|\\w))?\\s*$",
+					"end": "^\\s*(@(end)(\\s+)(enumerate))$",
+					"beginCaptures": {
+						"1": { "name": "entity.name.function" },
+						"3": { "name": "constant.character" }
+					},
+					"endCaptures": {
+						"1": { "name": "entity.name.function" },
+						"2": { "name": "constant.language" },
+						"3": { "name": "entity.name.function" }
+					},
+					"patterns": [
+						{
+							"match": "^\\s*(@item)(\\s+)",
+							"captures": {
+								"1": { "name": "entity.name.function" },
+								"2": {}
+							}
+						},
+						{ "include": "$self" }
+					]
+				},
+				{
+					"begin": "^\\s*(@itemize)((\\s+@)(bullet|minus))?\\s*$",
+					"end": "^\\s*(@(end)(\\s+)(itemize))$",
+					"beginCaptures": {
+						"1": { "name": "entity.name.function" },
+						"2": { "name": "entity.name.function" }
+					},
+					"endCaptures": {
+						"1": { "name": "entity.name.function" },
+						"2": { "name": "constant.language" },
+						"3": { "name": "entity.name.function" }
+					},
+					"patterns": [
+						{
+							"match": "^\\s*(@item)(\\s+)",
+							"captures": {
+								"1": { "name": "entity.name.function" },
+								"2": {}
+							}
+						},
+						{ "include": "$self" }
+					]
+				},
+				{
+					"begin": "^\\s*(@table)((\\s+@)(asis|strong|emph|code|samp|var|option|kbd))?\\s*$",
+					"end": "^\\s*(@(end)(\\s+)(table))$",
+					"beginCaptures": {
+						"1": { "name": "entity.name.function" },
+						"2": { "name": "entity.name.function" }
+					},
+					"endCaptures": {
+						"1": { "name": "entity.name.function" },
+						"2": { "name": "constant.language" },
+						"3": { "name": "entity.name.function" }
+					},
+					"patterns": [
+						{
+							"match": "^\\s*(@item)(\\s+)(.*)",
+							"captures": {
+								"1": { "name": "entity.name.function" },
+								"3": { "name": "string" }
+							}
+						},
+						{ "include": "$self" }
+					]
+				},
+				{
+					"begin": "^\\s*(@multitable)\\s+(@columnfractions((\\s+.\\d+)+)|({.*}))\\s*$",
+					"end": "^\\s*(@(end)(\\s+)(multitable))$",
+					"beginCaptures": {
+						"1": { "name": "entity.name.function" },
+						"2": { "name": "entity.name.function" },
+						"3": { "name": "constant.numeric" },
+						"5": { "name": "string" }
+					},
+					"endCaptures": {
+						"1": { "name": "entity.name.function" },
+						"2": { "name": "constant.language" },
+						"3": { "name": "entity.name.function" }
+					},
+					"patterns": [
+						{
+							"match": "^\\s*(@headitem)(\\s+)",
+							"captures": {
+								"1": { "name": "entity.name.function" },
+								"2": {}
+							}
+						},
+						{
+							"match": "(^|\\s*)(@tab)(\\s+)",
+							"captures": {
+								"2": { "name": "entity.name.function" },
+								"3": {}
+							}
+						},
+						{
+							"match": "^\\s*(@item)(\\s+)",
+							"captures": {
+								"1": { "name": "entity.name.function" },
+								"2": {}
+							}
+						},
+						{ "include": "$self" }
+					]
+				},
+				{
+					"begin": "^\\s*(@verbatim)\\s*$",
+					"end": "^\\s*(@(end)(\\s+)(verbatim))$",
+					"beginCaptures": {
+						"1": { "name": "entity.name.function" }
+					},
+					"endCaptures": {
+						"1": { "name": "entity.name.function" },
+						"2": { "name": "constant.language" },
+						"3": { "name": "entity.name.function" }
+					},
+					"patterns": [
+						{ "match": "@|{|}" },
+						{ "include": "$self" }
+					]
+				}
+			]
+		},
+		"block-commands": {
+			"patterns": [
+				{
+					"begin": "^\\s*(@documentdescription)\\s*$",
+					"end": "^\\s*(@(end)(\\s+)(documentdescription))$",
+					"beginCaptures": {
+						"1": { "name": "entity.name.function" }
+					},
+					"endCaptures": {
+						"1": { "name": "entity.name.function" },
+						"2": { "name": "constant.language" },
+						"3": { "name": "entity.name.function" }
+					},
+					"patterns": [{ "include": "$self" }]
+				},
+				{
+					"begin": "^\\s*(@copying)\\s*$",
+					"end": "^\\s*(@(end)(\\s+)(copying))$",
+					"beginCaptures": {
+						"1": { "name": "entity.name.function" }
+					},
+					"endCaptures": {
+						"1": { "name": "entity.name.function" },
+						"2": { "name": "constant.language" },
+						"3": { "name": "entity.name.function" }
+					},
+					"patterns": [{ "include": "$self" }]
+				},
+				{
+					"begin": "^\\s*(@quotation)\\s*$",
+					"end": "^\\s*(@(end)(\\s+)(quotation))$",
+					"beginCaptures": {
+						"1": { "name": "entity.name.function" }
+					},
+					"endCaptures": {
+						"1": { "name": "entity.name.function" },
+						"2": { "name": "constant.language" },
+						"3": { "name": "entity.name.function" }
+					},
+					"patterns": [{ "include": "$self" }]
+				},
+				{
+					"begin": "^\\s*(@titlepage)\\s*$",
+					"end": "^\\s*(@(end)(\\s+)(titlepage))$",
+					"beginCaptures": {
+						"1": { "name": "entity.name.function" }
+					},
+					"endCaptures": {
+						"1": { "name": "entity.name.function" },
+						"2": { "name": "constant.language" },
+						"3": { "name": "entity.name.function" }
+					},
+					"patterns": [{ "include": "$self" }]
+				},
+				{
+					"begin": "^\\s*(@ifnottex)\\s*$",
+					"end": "^\\s*(@(end)(\\s+)(ifnottex))$",
+					"beginCaptures": {
+						"1": { "name": "entity.name.function" }
+					},
+					"endCaptures": {
+						"1": { "name": "entity.name.function" },
+						"2": { "name": "constant.language" },
+						"3": { "name": "entity.name.function" }
+					},
+					"patterns": [{ "include": "$self" }]
+				},
+				{
+					"begin": "^\\s*(@display)\\s*$",
+					"end": "^\\s*(@(end)(\\s+)(display))$",
+					"beginCaptures": {
+						"1": { "name": "entity.name.function" }
+					},
+					"endCaptures": {
+						"1": { "name": "entity.name.function" },
+						"2": { "name": "constant.language" },
+						"3": { "name": "entity.name.function" }
+					},
+					"patterns": [{ "include": "$self" }]
+				},
+				{
+					"begin": "^\\s*(@example)\\s*$",
+					"end": "^\\s*(@(end)(\\s+)(example))$",
+					"beginCaptures": {
+						"1": { "name": "entity.name.function" }
+					},
+					"endCaptures": {
+						"1": { "name": "entity.name.function" },
+						"2": { "name": "constant.language" },
+						"3": { "name": "entity.name.function" }
+					},
+					"patterns": [{ "include": "$self" }]
+				},
+				{
+					"begin": "^\\s*(@smallexample)\\s*$",
+					"end": "^\\s*(@(end)(\\s+)(smallexample))$",
+					"beginCaptures": {
+						"1": { "name": "entity.name.function" }
+					},
+					"endCaptures": {
+						"1": { "name": "entity.name.function" },
+						"2": { "name": "constant.language" },
+						"3": { "name": "entity.name.function" }
+					},
+					"patterns": [{ "include": "$self" }]
+				},
+				{
+					"begin": "^\\s*(@group)\\s*$",
+					"end": "^\\s*(@(end)(\\s+)(group))$",
+					"beginCaptures": {
+						"1": { "name": "entity.name.function" }
+					},
+					"endCaptures": {
+						"1": { "name": "entity.name.function" },
+						"2": { "name": "constant.language" },
+						"3": { "name": "entity.name.function" }
+					},
+					"patterns": [{ "include": "$self" }]
+				}
+			]
+		}
+	},
+	"scopeName": "source.texinfo"
+}
