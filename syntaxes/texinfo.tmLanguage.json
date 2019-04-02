@@ -26,12 +26,21 @@
 	"repository": {
 		"parameter-commands": {
 			"patterns": [{
-				"match": "(@(strong|emph|code|copyright|ref|uref|xref|dfn|var|dots|TeX){)([^}]*)(})",
-				"captures": {
-					"1": { "name": "entity.name.function" },
-					"3": { "name": "string" },
-					"4": { "name": "entity.name.function" }
-				}
+				"begin": "(@(strong|emph|code|copyright|ref|uref|xref|dfn|var|dots|TeX){)",
+				"end": "(})",
+				"captures": { "1": { "name": "entity.name.function" } },
+				"endCaptures": { "1": { "name": "entity.name.function" } },
+				"patterns": [
+					{ "include": "#parameter-commands" },
+					{
+						"match": "(,)",
+						"name": "keyword.other"
+					},
+					{
+						"match": "[^,@{}]*",
+						"name": "string"
+					}
+				]
 			}]
 		},
 		"modifier-commands": {
