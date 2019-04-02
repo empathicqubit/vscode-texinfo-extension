@@ -45,11 +45,17 @@
 		},
 		"modifier-commands": {
 			"patterns": [{
-				"match": "(@(\\*|\\\\|setfilename|settitle|documentlanguage|title|author|vskip|insertcopying|node|top|include|chapter|appendix|unnumbered|section|heading|cindex|printindex|center|page|contents|shortcontents|bye)\\s+)(.*)",
-				"captures": {
-					"1": { "name": "entity.name.function" },
-					"3": { "name": "string" }
-				}
+				"begin": "(@(\\*|\\\\|setfilename|settitle|documentlanguage|title|author|vskip|insertcopying|node|top|include|chapter|appendix|unnumbered|section|heading|cindex|printindex|center|page|contents|shortcontents|bye))\\s+",
+				"end": "$",
+				"beginCaptures": { "1": { "name": "entity.name.function" } },
+				"endCaptures": {},
+				"patterns": [
+					{ "include": "#parameter-commands" },
+					{
+						"match": "[^@{}]*",
+						"name": "string"
+					}
+				]
 			}]
 		},
 		"special-block-commands": {
