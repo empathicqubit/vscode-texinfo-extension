@@ -71,24 +71,30 @@
 					},
 					"patterns": [
 						{
-							"match": "^(\\*)\\s+([^:]+)(::)(.*)$",
-							"captures": {
+							"begin": "^(\\*)\\s+([^:]+)(::)",
+							"end": "$",
+							"beginCaptures": {
 								"1": { "name": "keyword.operator" },
 								"2": { "name": "string" },
 								"3": { "name": "keyword.operator" },
 								"4": {}
-							}
+							},
+							"endCaptures": {},
+							"patterns": [{ "include": "$self" }]
 						},
 						{
-							"match": "^(\\*)\\s+([^:]+)(:)([^\\.]+)(\\.)(.*)$",
-							"captures": {
+							"begin": "^(\\*)\\s+([^:]+)(:)([^\\.]+)(\\.)",
+							"end": "$",
+							"beginCaptures": {
 								"1": { "name": "keyword.operator" },
 								"2": { "name": "string" },
 								"3": { "name": "keyword.operator" },
 								"4": { "name": "string" },
 								"5": { "name": "keyword.operator" },
 								"6": {}
-							}
+							},
+							"endCaptures": {},
+							"patterns": [{ "include": "$self" }]
 						},
 						{ "include": "$self" }
 					]
