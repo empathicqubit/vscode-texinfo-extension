@@ -57,90 +57,200 @@
 		"description": "Template for a document"
 	},
 
-	"at_character_escape": {
+	"@@": {
 		"prefix": "@@",
 		"body": [ "@@" ],
 		"description": "Literal '@' character"
 	},
-	"sentence_end_exclamation": {
+	"@!": {
 		"prefix": "@!",
 		"body": [ "@!" ],
 		"description": "Forced end of sentence with an exclamation mark"
 	},
-	"umlaut_accent": {
+	"@\"": {
 		"prefix": "@\"",
 		"body": [ "@\"$1" ],
 		"description": "Non-ASCII Umlaut Accent"
 	},
-	"acute_accent": {
+	"@&": {
+		"prefix": "@&",
+		"body": [ "@&" ],
+		"description": "Literal '&' character (only needed in definition commands)"
+	},
+	"@'": {
 		"prefix": "@'",
 		"body": [ "@'$1" ],
 		"description": "Non-ASCII Acute Accent"
 	},
-	"force_line_break": {
+	"@*": {
 		"prefix": "@*",
 		"body": [ "@*" ],
 		"description": "Force line break"
 	},
-	"cedilla_accent": {
+	"@,": {
 		"prefix": "@,{}",
 		"body": [ "@,{$1}$0" ],
 		"description": "Non-ASCII Cedilla Accent"
 	},
-	"discretionary_hyphen": {
+	"@-": {
 		"prefix": "@-",
 		"body": [ "@-" ],
 		"description": "Discretionary Hyphen"
 	},
-	"sentence_end_period": {
+	"@.": {
 		"prefix": "@.",
 		"body": [ "@." ],
 		"description": "Forced end of sentence with a period"
 	},
-	"allow_line_break": {
+	"@/": {
 		"prefix": "@/",
 		"body": [ "@/" ],
 		"description": "Allow line break in printed manual"
 	},
-	"not_ending_sentence": {
+	"@:": {
 		"prefix": "@:",
 		"body": [ "@:" ],
 		"description": "Not ending a sentence"
 	},
-	"macron_accent": {
+	"@=": {
 		"prefix": "@=",
 		"body": [ "@=$1" ],
 		"description": "Non-ASCII Macron/Overbar Accent"
 	},
-	"sentence_end_question_mark": {
+	"@?": {
 		"prefix": "@?",
 		"body": [ "@?" ],
 		"description": "Forced end of sentence with a question mark"
 	},
-	"circumflex_accent": {
+	"@^": {
 		"prefix": "@^",
 		"body": [ "@^$1" ],
 		"description": "Non-ASCII Circumflex Accent"
 	},
-	"grave_accent": {
+	"@`": {
 		"prefix": "@`",
 		"body": [ "@`$1" ],
 		"description": "Non-ASCII Grave Accent"
 	},
-	"open_brace_escape": {
+	"@{": {
 		"prefix": "@{",
 		"body": [ "@{" ],
 		"description": "Literal '{' character"
 	},
-	"closed_brace_escape": {
+	"@}": {
 		"prefix": "@}",
 		"body": [ "@}" ],
 		"description": "Literal '}' character"
 	},
-	"tilde_accent": {
+	"@~": {
 		"prefix": "@~",
 		"body": [ "@~$1" ],
 		"description": "Non-ASCII Tilde Accent"
+	},
+	"@aa": {
+		"prefix": "@aa{}",
+		"body": [ "@aa{}" ],
+		"description": "Non-ASCII uppercase 'A' with circle: 'å'"
+	},
+	"@AA": {
+		"prefix": "@AA{}",
+		"body": [ "@AA{}" ],
+		"description": "Non-ASCII lowercase 'A' with circle: 'Å'"
+	},
+	"@abbr": {
+		"prefix": "@abbr{}",
+		"body": [ "@abbr{${1:abbrevation}${2:[, meaning]}}" ],
+		"description": "General abbrevation"
+	},
+	"@acronym": {
+		"prefix": "@acronym{}",
+		"body": [ "@acronym{${1:acronym}${2:[, meaning]}}" ],
+		"description": "Abbrevations written in all capital letters"
+	},
+	"@ae": {
+		"prefix": "@ae{}",
+		"body": [ "@ae{}" ],
+		"description": "Non-ASCII lowercase 'AE' ligatures: 'æ'"
+	},
+	"@AE": {
+		"prefix": "@AE{}",
+		"body": [ "@AE{}" ],
+		"description": "Non-ASCII lowercase 'AE' ligatures: 'Æ'"
+	},
+	"@afivepapter": {
+		"prefix": "@afivepaper",
+		"body": [ "@afivepaper" ],
+		"description": "Specify document format for European size A5 paper"
+	},
+	"@afourlatex": {
+		"prefix": "@afourlatex",
+		"body": [ "@afourlatex" ],
+		"description": "Specify document format for European size A4 paper (alternative)"
+	},
+	"@afourpaper": {
+		"prefix": "@afourpaper",
+		"body": [ "@afourpaper" ],
+		"description": "Specify document format for European size A4 paper"
+	},
+	"@afourwide": {
+		"prefix": "@afourwide",
+		"body": [ "@afourwide" ],
+		"description": "Specify document format for European size A4 paper in wide format"
+	},
+	"@alias": {
+		"prefix": "@alias",
+		"body": [ "@alias ${1:new} = ${2:existing}" ],
+		"description": "Defines a new command to be just like an existing one"
+	},
+	"@allowcodebreaks": {
+		"prefix": "@allowcodebreaks",
+		"body": [ "@allowcodebreaks ${1|true,false|}" ],
+		"description": "Allows breaking at '-' or '_' within @code"
+	},
+	"@ampchar": {
+		"prefix": "@ampchar{}",
+		"body": [ "@ampchar{}" ],
+		"description": "Literal '&' character (only needed in definition commands)"
+	},
+	"@anchor": {
+		"prefix": "@anchor{}",
+		"body": [ "@anchor{${1:anchor}}" ],
+		"description": ""
+	},
+	"@appendix": {
+		"prefix": "@appendix",
+		"body": [ "@appendix" ],
+		"description": "Chapter-level structuring with letters as labels"
+	},
+	"@appendixsec": {
+		"prefix": "@appendixsec",
+		"body": [ "@appendixsec" ],
+		"description": "Section-level structuring with letters as labels"
+	},
+	"@appendixsection": {
+		"prefix": "@appendixsection",
+		"body": [ "@appendixsection" ],
+		"description": "Section-level structuring with letters as labels (Synonym for @appendixsec)"
+	},
+	"@appendixsubsection": {
+		"prefix": "@appendixsubsection",
+		"body": [ "@appendixsubsection" ],
+		"description": "Subsection-level structuring with letters as labels"
+	},
+	"@appendixsubsubsection": {
+		"prefix": "@appendixsubsubsection",
+		"body": [ "@appendixsubsubsection" ],
+		"description": "Subsubsection-level structuring with letters as labels"
+	},
+	"@arrow": {
+		"prefix": "@arrow{}",
+		"body": [ "@arrow{}" ],
+		"description": "Non-ASCII right pointing arrow: '→'"
+	},
+	"@atchar": {
+		"prefix": "@atchar{}",
+		"body": [ "@atchar{}" ],
+		"description": "Literal '@' character"
 	},
 
 	"multitable": {
