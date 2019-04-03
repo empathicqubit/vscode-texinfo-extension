@@ -20,6 +20,12 @@
             "language": "texinfo",
             "scopeName": "source.texinfo",
             "path": "./syntaxes/texinfo.tmLanguage.json"
-        }]
+        }],
+        "snippets": [
+            {
+                "language": "texinfo",
+                "path": "./snippets.json"
+            }
+        ]
     }
 }

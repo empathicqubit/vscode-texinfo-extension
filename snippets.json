@@ -1,0 +1,14 @@
+{
+	"Multitable": {
+		"prefix": "multitable",
+		"body": [
+			"@multitable @columnfractions .$1",
+			"@headitem $2",
+			"",
+			"@item $3",
+			"",
+			"@end multitable"
+		],
+		"description": "Create a multitable"
+	}
+}
