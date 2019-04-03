@@ -1,6 +1,6 @@
 {
-	"name": "vscode-texinfo-extension",
-	"displayName": "Visual Studio Code Texinfo Extension",
+	"name": "texinfo",
+	"displayName": "Texinfo",
 	"description": "GNU Texinfo support for VSCode",
 	"version": "0.1.0",
 	"engines": {
