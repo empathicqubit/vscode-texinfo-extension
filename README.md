@@ -1,10 +1,10 @@
-# VSCode Texinfo Language Extension #
+# VSCode Texinfo Extension #
 
 ![status][status-img]
 ![version][version-img]
 
-A [Visual Studio Code](https://code.visualstudio.com) extension to add syntax
-highlighting for [GNU Texinfo](https://www.gnu.org/software/texinfo).
+A [Visual Studio Code](https://code.visualstudio.com) extension to add support
+for [GNU Texinfo](https://www.gnu.org/software/texinfo).
 
 ## Features ##
 
