@@ -3,7 +3,7 @@
 ![status][status-img]
 ![version][version-img]
 
-A [Visual Studio Code](https://code.visualstudio.com) extension to add support
+A [Visual Studio Code](https://code.visualstudio.com) extension adding support
 for [GNU Texinfo](https://www.gnu.org/software/texinfo).
 
 ## Features ##
