@@ -6,6 +6,11 @@
 A [Visual Studio Code](https://code.visualstudio.com) extension to add syntax
 highlighting for [GNU Texinfo](https://www.gnu.org/software/texinfo).
 
+## Features ##
+
+* Syntax highlighting
+* Code snippets
+
 <!-- Shields -->
 
 [status-img]: https://img.shields.io/badge/dynamic/json.svg?label=status&url=http%3A%2F%2Fspeziil.ddns.net%2Frepos%2Fvscode-texinfo-extension.json&query=%24.status&colorB=brightgreen
