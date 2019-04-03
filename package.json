@@ -1,31 +1,31 @@
 {
-    "name": "vscode-texinfo-extension",
-    "displayName": "Visual Studio Code Texinfo Extension",
-    "description": "GNU Texinfo support for VSCode",
-    "version": "0.1.0",
-    "engines": {
-        "vscode": "^1.32.0"
-    },
-    "categories": [
-        "Programming Languages"
-    ],
-    "contributes": {
-        "languages": [{
-            "id": "texinfo",
-            "aliases": ["GNU Texinfo", "texinfo"],
-            "extensions": [".texinfo",".texi",".txi"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "texinfo",
-            "scopeName": "source.texinfo",
-            "path": "./syntaxes/texinfo.tmLanguage.json"
-        }],
-        "snippets": [
-            {
-                "language": "texinfo",
-                "path": "./snippets.json"
-            }
-        ]
-    }
+	"name": "vscode-texinfo-extension",
+	"displayName": "Visual Studio Code Texinfo Extension",
+	"description": "GNU Texinfo support for VSCode",
+	"version": "0.1.0",
+	"engines": {
+		"vscode": "^1.32.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"contributes": {
+		"languages": [{
+			"id": "texinfo",
+			"aliases": ["GNU Texinfo", "texinfo"],
+			"extensions": [".texinfo",".texi",".txi"],
+			"configuration": "./language-configuration.json"
+		}],
+		"grammars": [{
+			"language": "texinfo",
+			"scopeName": "source.texinfo",
+			"path": "./syntaxes/texinfo.tmLanguage.json"
+		}],
+		"snippets": [
+			{
+				"language": "texinfo",
+				"path": "./snippets.json"
+			}
+		]
+	}
 }
