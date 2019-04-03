@@ -1,12 +1,5 @@
 {
-	"comments": {
-		"lineComment": "@c",
-	},
-	"brackets": [
-		["{", "}"],
-		["[", "]"],
-		["(", ")"]
-	],
+	"comments": { "lineComment": "@c", },
 	"autoClosingPairs": [
 		["{", "}"],
 		["[", "]"],

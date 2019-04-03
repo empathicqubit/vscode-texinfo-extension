@@ -9,7 +9,7 @@ highlighting for [GNU Texinfo](https://www.gnu.org/software/texinfo).
 ## Features ##
 
 * Syntax highlighting
-* Code snippets
+* Code snippets and short description for every Texinfo command
 
 <!-- Shields -->
 
