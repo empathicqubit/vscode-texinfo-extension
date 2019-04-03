@@ -1,5 +1,5 @@
 {
-	"Document Template": {
+	"document_template": {
 		"prefix": "document",
 		"body": [
 			"\\input texinfo @c -*-texinfo-*-",
@@ -56,7 +56,94 @@
 		],
 		"description": "Template for a document"
 	},
-	"Multitable": {
+
+	"at_character_escape": {
+		"prefix": "@@",
+		"body": [ "@@" ],
+		"description": "Literal '@' character"
+	},
+	"sentence_end_exclamation": {
+		"prefix": "@!",
+		"body": [ "@!" ],
+		"description": "Forced end of sentence with an exclamation mark"
+	},
+	"umlaut_accent": {
+		"prefix": "@\"",
+		"body": [ "@\"$1" ],
+		"description": "Non-ASCII Umlaut Accent"
+	},
+	"acute_accent": {
+		"prefix": "@'",
+		"body": [ "@'$1" ],
+		"description": "Non-ASCII Acute Accent"
+	},
+	"force_line_break": {
+		"prefix": "@*",
+		"body": [ "@*" ],
+		"description": "Force line break"
+	},
+	"cedilla_accent": {
+		"prefix": "@,{}",
+		"body": [ "@,{$1}$0" ],
+		"description": "Non-ASCII Cedilla Accent"
+	},
+	"discretionary_hyphen": {
+		"prefix": "@-",
+		"body": [ "@-" ],
+		"description": "Discretionary Hyphen"
+	},
+	"sentence_end_period": {
+		"prefix": "@.",
+		"body": [ "@." ],
+		"description": "Forced end of sentence with a period"
+	},
+	"allow_line_break": {
+		"prefix": "@/",
+		"body": [ "@/" ],
+		"description": "Allow line break in printed manual"
+	},
+	"not_ending_sentence": {
+		"prefix": "@:",
+		"body": [ "@:" ],
+		"description": "Not ending a sentence"
+	},
+	"macron_accent": {
+		"prefix": "@=",
+		"body": [ "@=$1" ],
+		"description": "Non-ASCII Macron/Overbar Accent"
+	},
+	"sentence_end_question_mark": {
+		"prefix": "@?",
+		"body": [ "@?" ],
+		"description": "Forced end of sentence with a question mark"
+	},
+	"circumflex_accent": {
+		"prefix": "@^",
+		"body": [ "@^$1" ],
+		"description": "Non-ASCII Circumflex Accent"
+	},
+	"grave_accent": {
+		"prefix": "@`",
+		"body": [ "@`$1" ],
+		"description": "Non-ASCII Grave Accent"
+	},
+	"open_brace_escape": {
+		"prefix": "@{",
+		"body": [ "@{" ],
+		"description": "Literal '{' character"
+	},
+	"closed_brace_escape": {
+		"prefix": "@}",
+		"body": [ "@}" ],
+		"description": "Literal '}' character"
+	},
+	"tilde_accent": {
+		"prefix": "@~",
+		"body": [ "@~$1" ],
+		"description": "Non-ASCII Tilde Accent"
+	},
+
+	"multitable": {
 		"prefix": "multitable",
 		"body": [
 			"@multitable @columnfractions .${1:0}",
