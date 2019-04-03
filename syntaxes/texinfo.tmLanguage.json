@@ -21,7 +21,7 @@
 		{ "include": "#special-block-commands" },
 		{ "include": "#block-commands" },
 		{
-			"match": "@\\w+|{|}",
+			"match": "(@\\w*|{|})",
 			"name": "invalid.illegal"
 		}
 	],

@@ -272,6 +272,11 @@
 		"body": [ "@bye" ],
 		"description": "Terminates Texinfo processing"
 	},
+	"@c": {
+		"prefix": "@c",
+		"body": [ "@c" ],
+		"description": "Single line comment"
+	},
 
 	"multitable": {
 		"prefix": "multitable",
