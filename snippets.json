@@ -252,6 +252,26 @@
 		"body": [ "@atchar{}" ],
 		"description": "Literal '@' character"
 	},
+	"@b": {
+		"prefix": "@b{}",
+		"body": [ "@b{}" ],
+		"description": "Selects bold face"
+	},
+	"@backslashchar": {
+		"prefix": "@backslashchar{}",
+		"body": [ "@backslashchar{}" ],
+		"description": "Literal '\\' character (only needed in bodies of user defined macros)"
+	},
+	"@bullet": {
+		"prefix": "@bullet{}",
+		"body": [ "@bullet{}" ],
+		"description": "Non-ASCII bullet character: '•'"
+	},
+	"@bye": {
+		"prefix": "@bye",
+		"body": [ "@bye" ],
+		"description": "Terminates Texinfo processing"
+	},
 
 	"multitable": {
 		"prefix": "multitable",

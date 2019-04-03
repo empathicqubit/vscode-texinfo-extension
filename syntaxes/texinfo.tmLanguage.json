@@ -45,7 +45,7 @@
 		},
 		"parameter-commands": {
 			"patterns": [{
-				"begin": "(@(,|aa|AA|abbr|acronym|ae|AE|ampchar|anchor|arrow|atchar|strong|emph|code|copyright|ref|uref|xref|dfn|var|dots|TeX){)",
+				"begin": "(@(,|aa|AA|abbr|acronym|ae|AE|ampchar|anchor|arrow|atchar|b|backslashchar|strong|emph|code|copyright|ref|uref|xref|dfn|var|dots|TeX){)",
 				"end": "(})",
 				"captures": { "1": { "name": "entity.name.function" } },
 				"endCaptures": { "1": { "name": "entity.name.function" } },
@@ -65,7 +65,7 @@
 		"modifier-commands": {
 			"patterns": [
 				{
-					"begin": "(@(\\!|\\*|\\-|\\.|/|:|\\?|afivepaper|afourlatex|afourpaper|afourwide|appendix|appendixsec|appendixsection|appendixsubsection|appendixsubsubsection|author|setfilename|settitle|documentlanguage|title|vskip|insertcopying|node|top|include|chapter|unnumbered|section|heading|cindex|printindex|center|page|contents|shortcontents|bye))\\s+",
+					"begin": "(@(\\!|\\*|\\-|\\.|/|:|\\?|afivepaper|afourlatex|afourpaper|afourwide|appendix|appendixsec|appendixsection|appendixsubsection|appendixsubsubsection|author|bye|setfilename|settitle|documentlanguage|title|vskip|insertcopying|node|top|include|chapter|unnumbered|section|heading|cindex|printindex|center|page|contents|shortcontents))\\s+",
 					"end": "$",
 					"beginCaptures": { "1": { "name": "entity.name.function" } },
 					"endCaptures": {},
